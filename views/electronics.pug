@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Search Results for Electronics
+
+  //- Hardcoded data for testing
+  - var results = []
+  - results.push({ brand: "Samsung", model: "Galaxy S23", price: 999 })
+  - results.push({ brand: "Apple", model: "iPhone 15", price: 1099 })
+  - results.push({ brand: "Sony", model: "WH-1000XM5", price: 350 })
+
+  .container-fluid
+    .row
+      each item, index in results
+        .col-sm-2
+          h3 #{item.brand}
+          p Model: #{item.model}
+          p Price: $#{item.price}
